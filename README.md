@@ -1,6 +1,11 @@
 # babel-docker
-babel.js build from a docker image
+babel.js build from a docker image.  Can build a basic react app with babel.
 
-possible usage command:
+possible usage command, 
 
-    docker run -it -v $(pwd)/src:/app/src -v $(pwd)/static:/app/static react-babel-watcher
+    sudo docker run -it -v $(pwd)/src:/app/src -v $(pwd)/static:/app/static ghcr.io/kpm/babel-docker:main
+
+Assumes javascript/jsx source is under ./src and that output of builds goes to ./static
+
+Limitations:  doesn't use your packages.json, so only these packages are usable:
+@babel/core @babel/cli @babel/preset-env @babel/preset-react
