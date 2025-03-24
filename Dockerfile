@@ -17,4 +17,4 @@ RUN npm install
 RUN npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react
 
 # Command to run Babel in watch mode, assuming src and static will be mounted.
-CMD ["npx", "babel", "/app/src", "--out-dir", "/app/static", "--presets", "@babel/preset-env,@babel/preset-react", "--watch"]
+CMD ["sh", "-c", "npx babel --version && npx babel /app/src --out-dir /app/static --presets @babel/preset-env,@babel/preset-react --watch"]
