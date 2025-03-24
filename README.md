@@ -1,5 +1,5 @@
 # babel-docker
-babel.js build from a docker image.  Can build a basic react app with babel.
+babel.js build from a docker image.  Can build a basic react app with babel, currently uses NODE_VERSION=22.14.0
 
 See the package at https://ghcr.io/kpm/babel-docker
 
