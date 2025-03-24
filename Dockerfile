@@ -10,14 +10,8 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy the application source code
-COPY src ./src
-
 # Install babel CLI and presets
 RUN npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react
 
-# Create the destination directory
-RUN mkdir -p /app/static
-
-# Command to run Babel in watch mode
-CMD ["npx", "babel", "src", "--out-dir", "static", "--presets", "@babel/preset-env,@babel/preset-react", "--watch"]
+# Command to run Babel in watch mode, assuming src and static will be mounted.
+CMD ["npx", "babel", "/app/src", "--out-dir", "/app/static", "--presets", "@babel/preset-env,@babel/preset-react", "--watch"]
