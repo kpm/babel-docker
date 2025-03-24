@@ -8,8 +8,7 @@ WORKDIR /app
 #COPY package*.json ./
 
 # try initialising a base packages.json for now.
-npm init -y
-
+RUN npm init -y
 
 # Install dependencies
 RUN npm install
