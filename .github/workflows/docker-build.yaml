@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - main # Or your main branch
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
   build:
